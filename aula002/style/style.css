@@ -16,6 +16,11 @@ h1{
     padding-top: 10px;
 }
 
+p{
+    text-align: center;
+    color: rgb(61, 51, 52);
+}
+
 .main{
     background-color: white;
     width: 400px;
@@ -41,7 +46,6 @@ label{
 #email{
     width: 250px;
     height: 30px;
-    margin-top: 20px;
     margin-bottom: 30px;
 }
 
@@ -50,10 +54,15 @@ label{
     height: 30px;
 }
 
+a{
+    text-decoration: none;
+    color: rgb(252, 113, 113);
+}
+
 #login{
     width: 300px;
     height: 40px;
-    margin-top: 40px;
+    margin-top: 2px;
     text-align: center;
     margin-left: 50px;
     font-size: 25px;
@@ -61,4 +70,9 @@ label{
     background-color: rgb(61, 51, 52);
     border-radius: 10px;
     color: white;
+}
+
+#login:hover{
+    background-color: rgb(252, 113, 113);
+    transition: 0.2s ease-in-out;
 }
