@@ -1,3 +1,8 @@
+<?php
+    ob_start();
+    session_start();
+    include('conexao/conecta.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,28 +16,45 @@
     <title>Aula 002</title>
 </head>
 <body>
+    <?php
+        if(isset($_POST['login'])){
+            $select = $conexao->prepare('SELECT * from login WHERE BINARY email=:email AND BINARY senha=:senha');
+            $select->bindParam(':email', $email, PDO::PARAM_STR);
+            $select->bindParam(':senha', $senha, PDO::PARAM_STR);
+            $select->execute();
+            $login = $select->rowCount();
+
+                echo 'Logado com sucesso!';
+            } else{
+                echo 'Dados inválidos!';
+            }
+
+    ?>
     <div class="main">
         <h1>Login</h1>
+        <p>Insira suas informações</p>
         <div class="box">
-            <form>
+            <form method="post" enctype="multipart/form-data" action="login.php">
 
                 <div class="campo">
-                    <label><i class="far fa-envelope"></i></label>
-                    <input type="email" id="email" placeholder="E-mail" required>
+                    <label id="lapela1"><i class="far fa-envelope"></i></label>
+                    <input type="email" name ="email" id="email" placeholder="E-mail" required>
                 </div>
 
                 <div class="campo">
-                    <label><i class="fas fa-lock"></i></label>
-                    <input type="password" id="senha" placeholder="Senha" required>
+                    <label id="lapela2"><i class="fas fa-lock"></i></label>
+                    <input type="password" name="senha" id="senha" placeholder="Senha" required>
                 </div>
 
                 <div class="login">
-                    <input type="submit" id="login" value="login" required>
+                    <input type="submit" id="login" name="login" value="login">
                 </div>
 
             </form>
         </div>
     </div>
+
+   <!-- <script type="text/javascript" src="script/script.js"></script> -->
 </body>
 </html>
 

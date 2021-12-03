@@ -7,13 +7,20 @@
 }
 
 body{
-   background-image: url('back.png');
+   background-image: url('back.png'); 
+   background-size: 1380px;
 }
 
 h1{
     text-align: center;
     color: rgb(61, 51, 52);
     padding-top: 10px;
+}
+
+p{
+    text-align: center;
+    margin-bottom: -15px;
+    color: rgb(61, 51, 52);
 }
 
 .main{
@@ -30,10 +37,18 @@ h1{
     margin-left: 50px;
 }
 
-label{
+#lapela1{
     background-color: rgb(61, 51, 52);
     color: white;
-    padding: 4px 8px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-right: 5px;
+}
+
+#lapela2{
+    background-color: rgb(61, 51, 52);
+    color: white;
+    padding: 4px 11px;
     border-radius: 6px;
     margin-right: 5px;
 }
@@ -61,4 +76,9 @@ label{
     background-color: rgb(61, 51, 52);
     border-radius: 10px;
     color: white;
+}
+
+#login:hover{
+    background-color: rgb(241, 88, 88);
+    transition: 0.2s ease-in-out;
 }
